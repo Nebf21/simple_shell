@@ -132,5 +132,19 @@ int _atoi(char *s);
 
 int count_characters(char *string, char *character);
 
+int _print(char *string);
+
+/* Prints a string in the standar error */
+int _print_strerr(char *string);
+
+/* Prints a string in the standar error */
+int _print_error(int errorcode, data_of_program *data);
+void free_array_of_pointers(char **directories);
+
+/* Free the fields needed each loop */
+void free_recurrent_data(data_of_program *data);
+
+/* Free all field of the data */
+void free_all_data(data_of_program *data);
 
 #endif /* SHELL_H */
