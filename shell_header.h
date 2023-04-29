@@ -126,5 +126,11 @@ char *str_concat(char *string1, char *string2);
 
 /* Reverse a string */
 void str_reverse(char *string);
+void long_to_string(long number, char *string, int base);
+
+int _atoi(char *s);
+
+int count_characters(char *string, char *character);
+
 
 #endif /* SHELL_H */
