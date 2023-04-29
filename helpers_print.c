@@ -1,4 +1,4 @@
-#include "shell_header.h"
+#include "shell.h"
 
 /**
  * _print - writes a array of chars in the standar output
@@ -16,7 +16,7 @@ int _print(char *string)
  * Return: the number of bytes writed or .
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _print_strerr(char *string)
+int _printe(char *string)
 {
 	return (write(STDERR_FILENO, string, str_length(string)));
 }
@@ -36,35 +36,35 @@ int _print_error(int errorcode, data_of_program *data)
 
 	if (errorcode == 2 || errorcode == 3)
 	{
-		_print_strerr(data->program_name);
-		_print_strerr(": ");
-		_print_strerr(n_as_string);
-		_print_strerr(": ");
-		_print_strerr(data->tokens[0]);
+		_printe(data->program_name);
+		_printe(": ");
+		_printe(n_as_string);
+		_printe(": ");
+		_printe(data->tokens[0]);
 		if (errorcode == 2)
-			_print_strerr(": Illegal number: ");
+			_printe(": Illegal number: ");
 		else
-			_print_strerr(": can't cd to ");
-		_print_strerr(data->tokens[1]);
-		_print_strerr("\n");
+			_printe(": can't cd to ");
+		_printe(data->tokens[1]);
+		_printe("\n");
 	}
 	else if (errorcode == 127)
 	{
-		_print_strerr(data->program_name);
-		_print_strerr(": ");
-		_print_strerr(n_as_string);
-		_print_strerr(": ");
-		_print_strerr(data->command_name);
-		_print_strerr(": not found\n");
+		_printe(data->program_name);
+		_printe(": ");
+		_printe(n_as_string);
+		_printe(": ");
+		_printe(data->command_name);
+		_printe(": not found\n");
 	}
 	else if (errorcode == 126)
 	{
-		_print_strerr(data->program_name);
-		_print_strerr(": ");
-		_print_strerr(n_as_string);
-		_print_strerr(": ");
-		_print_strerr(data->command_name);
-		_print_strerr(": Permission denied\n");
+		_printe(data->program_name);
+		_printe(": ");
+		_printe(n_as_string);
+		_printe(": ");
+		_printe(data->command_name);
+		_printe(": Permission denied\n");
 	}
 	return (0);
 }
