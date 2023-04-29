@@ -36,35 +36,35 @@ int _print_error(int errorcode, data_of_program *data)
 
 	if (errorcode == 2 || errorcode == 3)
 	{
-		_printe(data->program_name);
-		_printe(": ");
-		_printe(n_as_string);
-		_printe(": ");
-		_printe(data->tokens[0]);
+		_print_strerr(data->program_name);
+		_print_strerr(": ");
+		_print_strerr(n_as_string);
+		_print_strerr(": ");
+		_print_strerr(data->tokens[0]);
 		if (errorcode == 2)
-			_printe(": Illegal number: ");
+			_print_strerr(": Illegal number: ");
 		else
-			_printe(": can't cd to ");
-		_printe(data->tokens[1]);
-		_printe("\n");
+			_print_strerr(": can't cd to ");
+		_print_strerr(data->tokens[1]);
+		_print_strerr("\n");
 	}
 	else if (errorcode == 127)
 	{
-		_printe(data->program_name);
-		_printe(": ");
-		_printe(n_as_string);
-		_printe(": ");
-		_printe(data->command_name);
-		_printe(": not found\n");
+		_print_strerr(data->program_name);
+		_print_strerr(": ");
+		_print_strerr(n_as_string);
+		_print_strerr(": ");
+		_print_strerr(data->command_name);
+		_print_strerr(": not found\n");
 	}
 	else if (errorcode == 126)
 	{
-		_printe(data->program_name);
-		_printe(": ");
-		_printe(n_as_string);
-		_printe(": ");
-		_printe(data->command_name);
-		_printe(": Permission denied\n");
+		_print_strerr(data->program_name);
+		_print_strerr(": ");
+		_print_strerr(n_as_string);
+		_print_strerr(": ");
+		_print_strerr(data->command_name);
+		_print_strerr(": Permission denied\n");
 	}
 	return (0);
 }
