@@ -27,7 +27,7 @@ int main(int argc, char *argv[], char *env[])
         prompt = PROMPT_MSG;
     }
     errno = 0;
-    sisifo(prompt, data);
+    run_shell(prompt, data);
     return (0);
 }
 
@@ -38,8 +38,9 @@ int main(int argc, char *argv[], char *env[])
  * (ctrl + c) signal is sent to the program
  * @unused: Unused parameter to match the function signature
  */
-void handle_signal_interrupt(int unused)
+void handle_signal_interrupt(int unused __attribute__((unused)))
 {
+	
     _print("\n");
     _print(PROMPT_MSG);
 }
