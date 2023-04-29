@@ -113,5 +113,18 @@ char **tokenize_path(data_of_program *data);
 /* Search for program in path */
 int find_program(data_of_program *data);
 
+int str_length(char *string);
+
+/* Duplicates an string */
+char *str_duplicate(char *string);
+
+/* Compares two strings */
+int str_compare(char *string1, char *string2, int number);
+
+/* Concatenates two strings */
+char *str_concat(char *string1, char *string2);
+
+/* Reverse a string */
+void str_reverse(char *string);
 
 #endif /* SHELL_H */
